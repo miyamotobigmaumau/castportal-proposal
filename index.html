@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>キャストポータル 動画クリエイティブ構成案</title>
+<meta name="description" content="キャストポータル（短期バイトはフルキャスト）動画広告クリエイティブの構成案。フリー素材・イラスト使用、縦型ショート動画 2パターン。">
+<meta name="robots" content="noindex,nofollow">
+<style>
+  :root {
+    --primary: #ff6b35;
+    --primary-dark: #e85a2a;
+    --accent: #1e88e5;
+    --bg: #f7f8fa;
+    --card: #ffffff;
+    --text: #1f2937;
+    --sub: #6b7280;
+    --border: #e5e7eb;
+    --ok: #16a34a;
+    --warn: #dc2626;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  header.cover {
+    background: linear-gradient(135deg, #ff6b35 0%, #ff9558 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 48px 40px;
+    margin-bottom: 32px;
+    box-shadow: 0 12px 30px rgba(255,107,53,.18);
+  }
+  header.cover h1 {
+    font-size: 32px;
+    margin: 0 0 12px;
+    letter-spacing: .02em;
+  }
+  header.cover .subtitle {
+    font-size: 16px;
+    opacity: .95;
+    margin: 0 0 24px;
+  }
+  header.cover .meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,.3);
+  }
+  header.cover .meta div { font-size: 14px; }
+  header.cover .meta .label {
+    opacity: .8;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  section {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.04);
+    border: 1px solid var(--border);
+  }
+  h2 {
+    font-size: 22px;
+    margin: 0 0 20px;
+    padding-left: 14px;
+    border-left: 5px solid var(--primary);
+  }
+  h3 {
+    font-size: 17px;
+    margin: 24px 0 12px;
+    color: var(--primary-dark);
+  }
+
+  .pill-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill {
+    background: #fff3ec;
+    color: var(--primary-dark);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid #ffd9c4;
+  }
+  .pill.accent {
+    background: #e3f2fd;
+    color: #1565c0;
+    border-color: #b6dcf6;
+  }
+  .pill.ok {
+    background: #e8f5e9;
+    color: var(--ok);
+    border-color: #b5e0ba;
+  }
+
+  .ng-box {
+    background: #fff5f5;
+    border-left: 4px solid var(--warn);
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin-top: 12px;
+  }
+  .ng-box strong { color: var(--warn); }
+
+  .ok-box {
+    background: #f0fdf4;
+    border-left: 4px solid var(--ok);
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin-top: 12px;
+  }
+
+  /* Video card */
+  .video-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 28px;
+    background: #fff;
+  }
+  .video-head {
+    background: linear-gradient(90deg, #fff7f2 0%, #fffaf6 100%);
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .video-head .no {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .video-head h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+    color: var(--text);
+  }
+  .video-head .concept {
+    font-size: 14px;
+    color: var(--sub);
+    margin: 0;
+  }
+  .video-meta {
+    display: flex;
+    gap: 24px;
+    padding: 14px 24px;
+    background: #fafbfc;
+    font-size: 13px;
+    color: var(--sub);
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .video-meta span strong {
+    color: var(--text);
+    margin-right: 4px;
+  }
+
+  /* Scene table */
+  table.scenes {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  table.scenes thead {
+    background: #f3f4f6;
+  }
+  table.scenes th, table.scenes td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    text-align: left;
+  }
+  table.scenes th {
+    font-size: 12px;
+    color: var(--sub);
+    font-weight: 600;
+    letter-spacing: .05em;
+  }
+  table.scenes td.sec {
+    width: 70px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    white-space: nowrap;
+  }
+  table.scenes td.scene { width: 32%; }
+  table.scenes td.copy {
+    width: 30%;
+    font-weight: 600;
+  }
+  table.scenes td.copy .telop {
+    background: #fffbe6;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 4px;
+    font-size: 13px;
+  }
+  table.scenes td.copy .narration {
+    display: block;
+    font-size: 12px;
+    color: var(--sub);
+    font-weight: 400;
+    margin-top: 4px;
+  }
+  table.scenes tr:last-child td { border-bottom: none; }
+
+  /* grid */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 720px) {
+    .grid-2 { grid-template-columns: 1fr; }
+    header.cover { padding: 32px 24px; }
+    header.cover h1 { font-size: 24px; }
+    section { padding: 24px 20px; }
+    table.scenes { font-size: 13px; }
+    table.scenes td.sec, table.scenes td.scene, table.scenes td.copy { width: auto; }
+  }
+  .info-card {
+    background: #f9fafb;
+    border-radius: 10px;
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+  }
+  .info-card h4 {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: var(--sub);
+    font-weight: 600;
+    letter-spacing: .05em;
+  }
+  .info-card ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+  .info-card li { margin-bottom: 4px; font-size: 14px; }
+
+  /* Asset sources */
+  .asset-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+    margin-top: 12px;
+  }
+  .asset-item {
+    background: #f9fafb;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .asset-item h5 {
+    margin: 0 0 6px;
+    font-size: 14px;
+    color: var(--primary-dark);
+  }
+  .asset-item p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--sub);
+  }
+
+  footer.note {
+    text-align: center;
+    color: var(--sub);
+    font-size: 12px;
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="cover">
+    <h1>キャストポータル 動画クリエイティブ構成案</h1>
+    <p class="subtitle">短期バイトはフルキャスト ／ 縦型ショート動画広告（9:16）</p>
+    <div class="meta">
+      <div>
+        <span class="label">プロダクト</span>
+        キャストポータル（短期バイト・単発・派遣）
+      </div>
+      <div>
+        <span class="label">想定配信面</span>
+        TikTok / Instagram Reels / YouTube Shorts
+      </div>
+      <div>
+        <span class="label">尺</span>
+        15秒（30秒拡張版検討可）
+      </div>
+      <div>
+        <span class="label">素材</span>
+        フリー素材／イラスト（実写キャスティングなし）
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. 企画方針 -->
+  <section>
+    <h2>1. 企画方針</h2>
+    <p>「すきま時間」「すぐ働ける」「日払い」というキャストポータルの強みを、<strong>健全でポジティブなトーン</strong>で訴求します。実写キャスティングは行わず、<strong>フリー素材映像・写真・オリジナルイラスト</strong>を組み合わせて構成。サービスの利便性を3秒以内に伝える流れを基本とします。</p>
+
+    <h3>クリエイティブの3原則</h3>
+    <div class="pill-list">
+      <span class="pill">① 冒頭3秒で「自分ごと化」</span>
+      <span class="pill">② サービス便益は数字＋アイコンで瞬時に</span>
+      <span class="pill">③ ラスト2秒でCTA（インストール）</span>
+    </div>
+
+    <h3>NG事項への配慮（クライアントご指定）</h3>
+    <div class="ng-box">
+      <strong>避ける表現：</strong>
+      <ul style="margin: 8px 0 0; padding-left: 20px;">
+        <li>公序良俗に反するシーン・セリフ・演出</li>
+        <li>「楽して稼げる」「怪しい副業」など<strong>ダーティーな印象</strong>を与える表現</li>
+        <li>夜職連想・過度な煽り・誇大表現（「絶対」「必ず」「最高額」等）</li>
+        <li>過度な露出・密着シーン・パワハラ的演出</li>
+      </ul>
+    </div>
+    <div class="ok-box">
+      <strong>採用するトーン：</strong>
+      明るい昼の自然光素材 ／ 清潔感のあるオフィス・倉庫・店舗の風景 ／ ポップで親しみのあるフラットイラスト ／ ポジティブな表情アイコン
+    </div>
+  </section>
+
+  <!-- 2. ターゲット & 訴求軸 -->
+  <section>
+    <h2>2. ターゲット & 訴求軸</h2>
+    <div class="grid-2">
+      <div class="info-card">
+        <h4>メインターゲット</h4>
+        <ul>
+          <li>20〜30代の学生／フリーター</li>
+          <li>副業を始めたい会社員（20代後半〜30代）</li>
+          <li>すきま時間を活用したい主婦・主夫</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h4>サブターゲット</h4>
+        <ul>
+          <li>就活前にバイト経験を積みたい大学生</li>
+          <li>引越し・イベント等の単発で稼ぎたい層</li>
+          <li>地方で働き口を探している層</li>
+        </ul>
+      </div>
+    </div>
+    <h3>訴求軸（2パターンで分散テスト）</h3>
+    <div class="pill-list">
+      <span class="pill accent">A. すきま時間 × 即日勤務（シナリオ訴求）</span>
+      <span class="pill accent">B. 職種の多様性 × 自分にもできる（イラスト訴求）</span>
+    </div>
+  </section>
+
+  <!-- 3. 動画案 -->
+  <section>
+    <h2>3. 動画案</h2>
+
+    <!-- パターンA -->
+    <div class="video-card">
+      <div class="video-head">
+        <span class="no">PATTERN A</span>
+        <h3>「あ、今日ヒマだ」→ そのままバイト確定</h3>
+        <p class="concept">予定が空いた瞬間にアプリを開けば、その日のうちに働ける利便性をシナリオで訴求。フリー素材映像 ＋ 吹き出し型のイラストテロップで構成。</p>
+      </div>
+      <div class="video-meta">
+        <span><strong>尺</strong>15秒</span>
+        <span><strong>素材</strong>フリー素材映像（手元・風景）＋ オリジナルイラスト（人物は顔出さない／後ろ姿・手元・アイコン）</span>
+        <span><strong>BGM</strong>明るくテンポの良いポップ系</span>
+      </div>
+      <table class="scenes">
+        <thead>
+          <tr><th>秒数</th><th>シーン</th><th>テロップ／ナレーション</th><th>演出ポイント</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="sec">0–2s</td>
+            <td class="scene">カフェのテーブルに置かれたスマホ俯瞰（フリー素材）。LINE風UIで「今日の予定キャンセル」通知が表示</td>
+            <td class="copy">
+              <span class="telop">「今日、急にヒマになった…」</span>
+              <span class="narration">N：休みが空いた日、どうする？</span>
+            </td>
+            <td>人物の顔は映さず、スマホ画面アップで状況を表現。視聴者の"自分ごと化"。</td>
+          </tr>
+          <tr>
+            <td class="sec">2–6s</td>
+            <td class="scene">キャストポータルのアプリUI（実画面 or 再現UI）。検索→ヒット→ワンタップ応募の流れをアニメーションで見せる</td>
+            <td class="copy">
+              <span class="telop">スマホで3タップ、即応募</span>
+              <span class="narration">N：キャストポータルなら、今日働ける仕事がすぐ見つかる。</span>
+            </td>
+            <td>UIをイラストの指（カーソル）が操作するアニメ。秒数表示「3タップ」を強調。</td>
+          </tr>
+          <tr>
+            <td class="sec">6–11s</td>
+            <td class="scene">職場のフリー素材を3カット切替（例：倉庫の段ボール／オフィス受付カウンター／イベント会場の什器）＋ イラストの吹き出しで職種名</td>
+            <td class="copy">
+              <span class="telop">単発OK／日払い対応／未経験歓迎</span>
+              <span class="narration">N：単発、日払い、未経験OK。</span>
+            </td>
+            <td>人物アップは使わず「働く場所」のカットで構成。3つの便益を3カットで。</td>
+          </tr>
+          <tr>
+            <td class="sec">11–15s</td>
+            <td class="scene">スマホ画面に「給与受取完了」通知のアニメーション。ラストにアプリアイコン＋CTAボタンが画面下からスライドイン</td>
+            <td class="copy">
+              <span class="telop">▶ キャストポータルをダウンロード</span>
+              <span class="narration">N：すきま時間を、収入に。キャストポータル。</span>
+            </td>
+            <td>CTAボタンはアプリストアと同色で誘導。アプリアイコンを大きく見せる。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- パターンB -->
+    <div class="video-card">
+      <div class="video-head">
+        <span class="no">PATTERN B</span>
+        <h3>こんな仕事もあるんだ！キャストポータルの職種図鑑</h3>
+        <p class="concept">職種の幅広さを、フラットイラストの「お仕事アイコン」で高速展開。「自分にもできそう」と思わせる多様性訴求。</p>
+      </div>
+      <div class="video-meta">
+        <span><strong>尺</strong>15秒</span>
+        <span><strong>素材</strong>オリジナルフラットイラスト（職種アイコン）＋ フリー素材映像（職場風景）</span>
+        <span><strong>BGM</strong>テンポの速いアップビート</span>
+      </div>
+      <table class="scenes">
+        <thead>
+          <tr><th>秒数</th><th>シーン</th><th>テロップ／ナレーション</th><th>演出ポイント</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="sec">0–2s</td>
+            <td class="scene">画面いっぱいに大きな問いかけテロップ。背景はキャストポータルのブランドカラーのグラデ＋イラストパーツが弾むモーション</td>
+            <td class="copy">
+              <span class="telop">「単発バイトって、どんな仕事があるの？」</span>
+              <span class="narration">N：キャストポータルなら——</span>
+            </td>
+            <td>視聴者の素朴な疑問を先回り。文字主体で離脱を防ぐ。</td>
+          </tr>
+          <tr>
+            <td class="sec">2–10s</td>
+            <td class="scene">職種アイコンを1秒ずつ高速カット（例：仕分け箱／受付ベル／イベント設営の什器／レジ／清掃道具／工具／PC／クリップボード）</td>
+            <td class="copy">
+              <span class="telop">仕分け｜受付｜イベント｜販売｜清掃｜軽作業｜事務｜調査…</span>
+              <span class="narration">N：あなたに合った仕事が、きっと見つかる。</span>
+            </td>
+            <td>各カットで職種アイコンを画面中央に。背景色も切替えてテンポを出す。フリー素材の職場写真をワンポイントで挿入も可。</td>
+          </tr>
+          <tr>
+            <td class="sec">10–13s</td>
+            <td class="scene">複数の属性を表すアイコン（学生帽／エプロン／スーツ／エコバッグ等）が並ぶ集合カット</td>
+            <td class="copy">
+              <span class="telop">学生／主婦／会社員／シニア、誰でもOK</span>
+              <span class="narration">N：年齢も経験も、こだわらない。</span>
+            </td>
+            <td>顔のないアイコンで属性を表現することで、視聴者が自分を投影しやすくする。</td>
+          </tr>
+          <tr>
+            <td class="sec">13–15s</td>
+            <td class="scene">アプリUI起動 → 仕事カードがスワイプで流れる → ロゴ＋CTAボタン</td>
+            <td class="copy">
+              <span class="telop">▶ まずはアプリで職種を見てみる</span>
+              <span class="narration">N：キャストポータル。</span>
+            </td>
+            <td>"見るだけ無料"の安心感をCTAに含める案も検討可。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 4. 素材調達方針 -->
+  <section>
+    <h2>4. 素材調達方針（実写キャスティングなし）</h2>
+    <p>実写の人物キャスティングは行わず、以下の素材を組み合わせて制作します。商用利用可・著作権クリーンな素材のみを使用します。</p>
+    <div class="asset-grid">
+      <div class="asset-item">
+        <h5>① フリー素材映像</h5>
+        <p>Pexels Videos／Pixabay／Coverr など商用フリーの動画素材。職場風景・手元アップ・スマホ操作・街中の風景などを採用。人物の顔がはっきり映るカットは使用せず、手元・後ろ姿・引き画のみ。</p>
+      </div>
+      <div class="asset-item">
+        <h5>② オリジナルフラットイラスト</h5>
+        <p>職種アイコン／吹き出し／属性アイコンをトーン統一して制作。ブランドカラー（オレンジ）をアクセントに使用。</p>
+      </div>
+      <div class="asset-item">
+        <h5>③ UIモックアニメーション</h5>
+        <p>キャストポータルの実画面 or 再現UIをアニメーション化。タップ操作・通知ポップアップ・カードスワイプ等をモーショングラフィックで表現。</p>
+      </div>
+      <div class="asset-item">
+        <h5>④ BGM・効果音</h5>
+        <p>商用利用可のロイヤリティフリーBGM（Artlist／Epidemic Sound 等）を採用。明るく軽快なポップ／アコースティック系を中心に選定。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. トーン&マナー -->
+  <section>
+    <h2>5. トーン＆マナー</h2>
+    <div class="grid-2">
+      <div class="info-card">
+        <h4>OKトーン（採用）</h4>
+        <ul>
+          <li>明るい昼間／自然光の素材</li>
+          <li>清潔感のある職場・服装（制服・エプロン等）</li>
+          <li>ポップで親しみのあるフラットイラスト</li>
+          <li>働く場所・道具・手元を中心に構成</li>
+          <li>ポジティブで前向きなBGM・SE</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h4>NGトーン（不使用）</h4>
+        <ul>
+          <li>夜のシーン・暗いトーンの素材</li>
+          <li>露出の多いビジュアル／密着演出</li>
+          <li>"楽して大金"を想起させる表現</li>
+          <li>パワハラ的・圧の強いキャラ／構図</li>
+          <li>誇大表現・断定表現（「絶対」「必ず」等）</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="note">
+    本資料は構成案 ver.1 です。ご要望に応じてシナリオ・トーン・職種・CTA文言を調整いたします。
+  </footer>
+
+</div>
+</body>
+</html>
